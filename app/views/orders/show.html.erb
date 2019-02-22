@@ -22,8 +22,11 @@
       </thead>
       <tbody>
         <% @order.line_items.each do |item| %>
-          <%= render 'item', product: item.product, quantity: item.quantity.to_i %>
-        #qauntity *pICE
+          <%= render 'item', 
+            product: item.product, 
+            quantity: item.quantity.to_i 
+          %>
+        <% #qauntity *pICE %>
         <% end %>
       </tbody>
       <tfoot>
@@ -32,7 +35,7 @@
             TOTAL:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+            <%= @order.total_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
@@ -41,5 +44,5 @@
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
+ <%= console %> <% #used console to look at @order to see what properties i have access too%>
 </section>
