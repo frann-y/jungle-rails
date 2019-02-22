@@ -1,8 +1,8 @@
 class ExampleMailer < ApplicationMailer
     default from: "no-reply@jungle.com" #special email
 
-    def sample_email(user)
-        @user = user
-        mail(to: @user.email, subject: 'Sample Email')
+    def sample_email(order)
+        @order = order
+        mail(to: order.email, subject: "Order #: #{@order.id}")
       end
 end

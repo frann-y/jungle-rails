@@ -6,10 +6,15 @@
 
   <div class="order-summary jumbotron">
     <% if current_user %>
-    <h4><%= current_user.email %>, thank you for your order!</h4>
+      <h4><%= current_user.first_name %>, thank you for your purchase.</h4>
     <% else %>
-    <h4>User, Thank you for your order!</h4>
+      <h4>User, thank you for your purchase.</h4>
     <% end %>
+
+    <h4>
+      An email has been sent to:
+      <%= current_user.email %>
+    </h4>
 
       <table class="table table-bordered">
       <thead>
@@ -26,7 +31,6 @@
             product: item.product, 
             quantity: item.quantity.to_i 
           %>
-        <% #qauntity *pICE %>
         <% end %>
       </tbody>
       <tfoot>
@@ -40,9 +44,9 @@
         </tr>
       </tfoot>
     </table>
-    
+
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
- <%= console %> <% #used console to look at @order to see what properties i have access too%>
+ <%= console %> 
 </section>

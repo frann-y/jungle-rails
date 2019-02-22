@@ -13,6 +13,9 @@ class UsersController < ApplicationController
         else
           redirect_to '/register'
         end
+
+        SendEmailJob.set(wait: 20.seconds).perform_later(@user)
+        
     end 
 
     private
@@ -26,4 +29,5 @@ class UsersController < ApplicationController
             :password_confirmation,
         )
     end
+    
 end
