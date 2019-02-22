@@ -1,5 +1,5 @@
-class Admin::ProductsController < ApplicationController
-
+class Admin::ProductsController < Admin::AdminController
+  
   def index
     @products = Product.order(id: :desc).all
   end

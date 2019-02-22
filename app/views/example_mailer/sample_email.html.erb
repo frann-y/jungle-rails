@@ -13,9 +13,8 @@
         <p> Item: <%= item.product.name %></p> 
         <p> Description: <%= item.product.description %> </p>
         <p>Quantity: <%= item.product.quantity %></p>
-        <p>Price: <%= item.product.price %></p>
-        %>
-      <% end %>
+        <p>Price: <%= item.product.price %></p>     
+    <% end %>
 
     <p>
        Total: $<%= @order.total_cents / 100.0 %>
