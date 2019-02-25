@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  resources :products, only: [:index, :show]
+  #nested resource for reviews
+  resources :products, only: [:index, :show] do
+    resource :reviews, only: [:new, :create]
+  end
+
   resources :categories, only: [:show]
 
   resource :cart, only: [:show] do

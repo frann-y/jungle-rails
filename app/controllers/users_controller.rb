@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    
+
     def new
         #render the new form
         @user = User.new
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
           redirect_to '/register'
         end
 
-        SendEmailJob.set(wait: 20.seconds).perform_later(@user)
+        #SendEmailJob.set(wait: 20.seconds).perform_later(@user)
         
     end 
 
