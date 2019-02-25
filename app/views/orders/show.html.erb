@@ -12,8 +12,10 @@
     <% end %>
 
     <h4>
-      An email has been sent to:
-      <%= current_user.email %>
+      <% if current_user %>
+        An email has been sent to: 
+        <%= current_user.email %>
+      <% end %>
     </h4>
 
       <table class="table table-bordered">
