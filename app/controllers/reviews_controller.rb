@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
     #before_action = before_filter
-    #before_action :set_review, only: [:show, :edit, :update, :destroy]
+    before_action :logged_in
 
     def create
 
@@ -30,6 +30,13 @@ class ReviewsController < ApplicationController
     end
 
     private
+
+        def logged_in
+            unless current_user
+                flash[:error] = "Log in!!!"
+                redirect_to "/login"
+            end
+        end
 
         def review_params
         params.require(:review).permit(:description, :rating)

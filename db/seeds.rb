@@ -134,10 +134,10 @@ cat3.products.create!({
 
 #REVIEWS
 product = Product.first 
-user = User.create(first_name:"Bob", last_name:"BOOO", email:"nonono@nonnono.com", password_digest:"1234")
-product.reviews.create(user:user, description: "Adequate", rating: 3)
-product.reviews.create(user:user, description: "Stupendous!", rating: 4.5)
-product.reviews.create(user:user, description: "Whuut?!", rating: 2.5)
-product.reviews.create(user:user, description: "Changed my life!", rating: 5)
+#user = User.create(first_name:"Bob", last_name:"BOOO", email:"nonono@nonnono.com", password_digest:"1234")
+#product.reviews.create(user:user, description: "Adequate", rating: 3)
+#product.reviews.create(user:user, description: "Stupendous!", rating: 4.5)
+#product.reviews.create(user:user, description: "Whuut?!", rating: 2.5)
+#product.reviews.create(user:user, description: "Changed my life!", rating: 5)
 
 puts "DONE!"
