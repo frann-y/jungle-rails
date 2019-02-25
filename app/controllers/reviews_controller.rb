@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
     #before_action = before_filter
-    before_action :set_review, only: [:show, :edit, :update, :destroy]
+    #before_action :set_review, only: [:show, :edit, :update, :destroy]
 
     def create
 
@@ -19,6 +19,16 @@ class ReviewsController < ApplicationController
         end
     end
     
+    def destroy
+        review = Review.find(params[:id])
+        review.destroy
+        if review.destroy
+          redirect_to product_path(params[:product_id]), notice: "Review deleted!"
+        else
+          redirect_to product_path(params[:product_id]), notice: "Could not delete the review!"
+        end
+    end
+
     private
 
         def review_params
