@@ -1,22 +1,20 @@
 <% if current_user %>
     <h2>Reviews</h2>
-
     <div class="row">
-    <div class="col-sm-6 col-sm-offset-1">
-        <%= form_for [@product, @review] do |f| %>
-        <div class="form-group">
-            <%= f.label :description %>
-            <%= f.text_area :description, class: 'form-control' %>
-        </div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <%= form_for [@product, @review] do |f| %>
+                <div class="form-group">
+                    <%= f.label :description %>
+                    <%= f.text_area :description, class: 'form-control' %>
+                </div>
 
-        <div class="form-group">
-            <%= f.label :rating %>
-            <%= f.select :rating, [0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], class: 'form-control' %>
+                <div class="form-group">
+                    <%= f.label :rating %>
+                    <%= f.select :rating, [0, 1, 2, 3, 4, 5], class: 'form-control' %>
+                </div>
+                <%= f.submit 'Add Review', class: 'btn btn-primary' %>
+            <% end %>
         </div>
-
-        <%= f.submit 'Add Review', class: 'btn btn-primary' %>
-        <% end %>
-    </div>
     </div>
 <% end %>
 
@@ -24,16 +22,17 @@
 
 <h2>Customer Reviews </h2>
 
+
 <div class="row" >
     <% @product.reviews.each do |review| %>
         <div class="col-sm-6">
             <dl class="dl-horizontal">
                 <dt>User:</dt>
-                <dd><%= review.user.first_name || "user" %></dd>
+                    <dd><%= review.user.first_name || "user" %></dd>
                 <dt>Description</dt>
                     <dd><%= review.description %></dd>
                 <dt>Rating</dt>
-                    <dd><%= review.rating %> / 5</dd>
+                    <dd><%= review.rating %> /5</dd>
                 <% if current_user == User.find(review.user_id) %>
                     <dd><%= link_to 'Delete', [@product,review],  method: :delete, data: {confirm: "Are you sure you want to delete?"}%></dd>
                 <% else %>
