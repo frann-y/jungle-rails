@@ -7,9 +7,14 @@
   </header>
   <p class="description">
     <%= product.description %>
-  </p>
-
-
+  </p> 
+  <% if !product.average_rating %>
+    </br>
+    <p>Not Yet Rated </p>
+  <% else %> 
+    </br>
+    <p> Rating: <%= product.average_rating.round(1) %>/5 </p>
+  <% end %>
 
   <footer class="actions">
 
