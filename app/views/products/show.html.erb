@@ -25,7 +25,7 @@
           <dt>Soldout</dt>
         
           <% if @product.quantity == 0 %>
-            <dd>Currently Not In Stock</dd>
+            <dd style="color: red">Currently Not In Stock</dd>
             <% else %>
             <dd>Available For Order</dd>
           <% end %>
