@@ -132,7 +132,7 @@ cat3.products.create!({
   price: 2_483.75
 })
 
-#REVIEWS
+#FAKE REVIEWS and USER for Testing!REVIEWS 
 product = Product.first 
 #user = User.create(first_name:"Bob", last_name:"BOOO", email:"nonono@nonnono.com", password_digest:"1234")
 #product.reviews.create(user:user, description: "Adequate", rating: 3)

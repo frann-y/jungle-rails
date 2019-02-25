@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :categories, except: [:destroy]
   end
 
+  #Routes: Get and Post for : register and logging in  
   get '/register', to:'users#new'
   post '/users', to: 'users#create'
 

@@ -1,3 +1,5 @@
+<%# Product Partial Page %>
+
 <article class="product">
   <header>
     <%= link_to product do %>
@@ -5,9 +7,11 @@
       <h4><%= product.name %></h4>
     <% end %>
   </header>
+  
   <p class="description">
     <%= product.description %>
   </p> 
+  
   <% if !product.average_rating %>
     </br>
     <p>Not Yet Rated </p>
@@ -22,9 +26,11 @@
       <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary' , method: :post do %>
         <%= fa_icon "shopping-cart", text: 'Add' %>
       <% end %>
+      
       <%= link_to product, class: 'btn btn-default pull-right' do %>
         Details &raquo;
       <% end %>
+    
     <% else %> 
       <%= link_to product, class: 'btn btn-default pull-right' do %>
         Details &raquo;
@@ -38,9 +44,9 @@
 
 
   <% if product.quantity == 0 %>
-      <aside class="soldout">
-        <%= "SOLD OUT" %>
-      </aside>
+    <aside class="soldout">
+      <%= "SOLD OUT" %>
+    </aside>
   <% end %>
 
 </article>
