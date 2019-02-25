@@ -23,13 +23,13 @@
           <dt>Price</dt>
             <dd><%= @product.price %></dd>
           <dt>Soldout</dt>
-        
-          <% if @product.quantity == 0 %>
-            <dd style="color: crimson">Currently Not In Stock</dd>
-            <% else %>
-            <dd style="color:RoyalBlue">Available For Order</dd>
-          <% end %>
-
+            <% if @product.quantity == 0 %>
+              <dd style="color: crimson">Currently Not In Stock</dd>
+              <% else %>
+              <dd style="color:RoyalBlue">Available For Order</dd>
+            <% end %>
+          <dt>Average Rating</dt>
+            <dd><%= @product.average_rating.round(1) %>/5</dd>
         </dl>
       </div>
     </div>
