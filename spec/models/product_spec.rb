@@ -40,20 +40,23 @@ RSpec.describe Product, type: :model do
     #price is weird. it will convert it to cents. 
       @product.price_cents = nil
       expect(@product).to_not be_valid
+      expect(@product.errors.full_messages).to include("Price cents is not a number", "Price is not a number", "Price can't be blank")
     end
     # validates :quantity, presence: true
     it "is not valid without a quantity" do
       @product.quantity = nil
-      expect(@product).to_not be_valid    
+      expect(@product).to_not be_valid
+      expect(@product.errors.full_messages).to include("Quantity can't be blank")
+    
     end
 
     # validates :category, presence: true
     it "is not valid without a category" do
-      @product.quantity = nil
+      @product.category = nil
       expect(@product).to_not be_valid #to_not be_valid?
+      expect(@product.errors.full_messages).to include("Category can't be blank")
     end
-
-
+    
     #for each, pass in a block
     #it --name--- do
   end
