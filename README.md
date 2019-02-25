@@ -21,6 +21,12 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
+## Screenshots
+
+!["Screenshot of the product list and login/register heading."](https://github.com/frann-y/jungle-rails/blob/master/docs/productListScreen.png?raw=true)
+
+!["Screenshot of product review page as a logged in user"](https://github.com/frann-y/jungle-rails/blob/master/docs/productReviewScreen.png?raw=true)
+
 ## Dependencies
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
