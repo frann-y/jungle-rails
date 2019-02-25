@@ -29,7 +29,11 @@
               <dd style="color:RoyalBlue">Available For Order</dd>
             <% end %>
           <dt>Average Rating</dt>
+          <% if !@product.average_rating %>
+            <dd>Not Yet Rated</dd>
+          <% else %>
             <dd><%= @product.average_rating.round(1) %>/5</dd>
+          <% end %>
         </dl>
       </div>
     </div>
