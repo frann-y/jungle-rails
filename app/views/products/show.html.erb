@@ -23,6 +23,13 @@
           <dt>Price</dt>
             <dd><%= @product.price %></dd>
           <dt>Soldout</dt>
+        
+          <% if @product.quantity == 0 %>
+            <dd>Currently Not In Stock</dd>
+            <% else %>
+            <dd>Available For Order</dd>
+          <% end %>
+
         </dl>
       </div>
     </div>

@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
         product = Product.find(params[:product_id])
         review = Review.new(review_params)
         review.user = current_user
-        review.save
+        review.product = product
 
         if review.save
             redirect_to product_path(params[:product_id]), notice: "Review created"

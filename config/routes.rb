@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   #nested resource for reviews
   resources :products, only: [:index, :show] do
-    resource :reviews, only: [:new, :create, :destroy]
+    resources :reviews, only: [:index, :create, :destroy]
   end
 
   resources :categories, only: [:show]
